@@ -11,11 +11,16 @@ function maude
 end
 
 # Source in dnvm. This will make the dnx command work
-fenv source dnvm.sh
+fenv source "$HOME/.dnx/dnvm/dnvm.sh"
 
 # Sourcing dnvm.sh wont make the dnvm command available, it has to be chained
 function dnvm
-    fenv source dnvm.sh \; dnvm    
+    fenv source "$HOME/.dnx/dnvm/dnvm.sh" \; dnvm $argv
+end
+
+function code
+    set VSCODE_CWD (pwd)
+    command open -n -b "com.microsoft.VSCode" $argv
 end
 
 # Aliases for docker
