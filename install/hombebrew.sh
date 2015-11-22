@@ -1,3 +1,6 @@
+# Install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Normal brew
 brew install findutils
 brew install android-sdk
@@ -31,3 +34,6 @@ brew cask install google-drive
 brew cask install google-photos-backup
 brew cask install azure-cli
 #brew cask install gopro-studio
+
+# NPM Global installs
+npm install -g code-push-cli grunt-cli react-native-cli yo generator-aspnet
