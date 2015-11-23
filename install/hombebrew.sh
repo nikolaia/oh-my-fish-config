@@ -23,6 +23,8 @@ brew install flow
 brew install z
 brew install awscli
 brew install mono
+brew install mackup
+# After loging in to dropbox: mackup restore
 
 # Cask
 brew install caskroom/cask/brew-cask
