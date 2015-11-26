@@ -20,7 +20,7 @@ function dnvm
 end
 
 function code
-    set VSCODE_CWD (pwd)
+    set -gx VSCODE_CWD (pwd)
     command open -n -b "com.microsoft.VSCode" $argv
 end
 
@@ -29,14 +29,20 @@ alias d="docker"
 alias dcomp="docker-compose"
 alias dmac="docker-machine"
 
-# Paket command. Needs to be installed.
+# Pass arguments to paket.exe in .paket folder
 function paket
-  fish -c "bash -c 'mono ~/.paket/paket.exe $argv'"
+  fish -c "bash -c 'mono ./.paket/paket.exe $argv'"
 end
 
-# Call directly to fake.exe. Needs to be fetched from nuget
+# Call build.sh in current dir
 function fake
-  fish -c "bash -c 'mono ~/.nuget/lib/FAKE/tools/fake.exe $argv'"
+  fish -c "bash -c 'sh build.sh $argv'"
+end
+
+# New fsharp project
+function projectscaffold
+  fish -c "git clone git@github.com:fsprojects/ProjectScaffold.git $argv"
+  fish -c "bash -c 'sh $argv/build.sh'"
 end
 
 ### LOCALHOST PLUGIN
