@@ -31,7 +31,7 @@ alias dmac="docker-machine"
 
 # Pass arguments to paket.exe in .paket folder
 function paket
-  fish -c "bash -c 'mono ./.paket/paket.exe $argv'"
+  fish -c "mono (pwd)/.paket/paket.exe $argv"
 end
 
 # Call build.sh in current dir
