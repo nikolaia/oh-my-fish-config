@@ -2,9 +2,10 @@ set PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/ $PATH
 set PATH $HOME/.rvm/bin $PATH
 set PATH /Applications/Postgres.app/Contents/Versions/9.3/bin $PATH
 set PATH /Users/nikolaia/.cargo/bin $PATH
-set GOPATH $HOME/Development/Go
-set -g JAVA_HOME `/usr/libexec/java_home -v 1.7`
-set -g ANDROID_HOME /usr/local/opt/android-sdk
+set -gx GOPATH $HOME/Development/Go
+set -gx RUST_SRC_PATH $HOME/Development/rust/src/
+set -gx JAVA_HOME `/usr/libexec/java_home -v 1.7`
+set -gx ANDROID_HOME /usr/local/opt/android-sdk
 # set -g HOMEBREW_GITHUB_API_TOKEN REPLACE_ME_WITH_TOKEN
 
 # Function for running Maude with arguments
