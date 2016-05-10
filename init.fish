@@ -47,6 +47,24 @@ function projectscaffold
   fish -c "bash -c 'sh $argv/build.sh'"
 end
 
+###-begin-yo-completion-###
+# Requires npm install -g yo
+function _yo_completion
+  set cmd (commandline -opc)
+  set cursor (commandline -C)
+  set completions (eval env DEBUG=\"" \"" COMP_CWORD=\""$cmd\"" COMP_LINE=\""$cmd\"" COMP_POINT=\""$cursor\"" yo-complete completion --json)
+
+  for completion in $completions
+    set cmd "node -e \"var parts = '$completion'.split(':'); console.log(parts.slice(0, -1).join(':')); console.log(parts.slice(-1)[0]);\""
+    set parts (eval $cmd)
+    complete -f -c yo -a "'$parts[1]'" -d "$parts[2]"
+    echo $parts[1]
+  end
+end
+
+complete -d 'yo' -c yo -a "(eval _yo_completion)"
+###-end-yo-completion-###
+
 ### LOCALHOST PLUGIN
 
 # Opens http://localhost:3000 (and other ports) in the default browser
