@@ -18,6 +18,8 @@ function code
     command open -n -b "com.microsoft.VSCode" $argv
 end
 
+alias l="ls -la"
+
 # Aliases for docker
 alias d="docker"
 alias dcomp="docker-compose"
