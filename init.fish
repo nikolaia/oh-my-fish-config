@@ -13,14 +13,6 @@ function maude
     fish -c "~/.maude/maude.darwin64 $argv"
 end
 
-# Source in dnvm. This will make the dnx command work
-fenv source "$HOME/.dnx/dnvm/dnvm.sh"
-
-# Sourcing dnvm.sh wont make the dnvm command available, it has to be chained
-function dnvm
-    fenv source "$HOME/.dnx/dnvm/dnvm.sh" \; dnvm $argv
-end
-
 function code
     set -gx VSCODE_CWD (pwd)
     command open -n -b "com.microsoft.VSCode" $argv
