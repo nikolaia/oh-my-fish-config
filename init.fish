@@ -19,6 +19,7 @@ function code
 end
 
 alias l="ls -la"
+alias drma="docker rm -f (docker ps -a -q)"
 
 # Aliases for docker
 alias d="docker"
