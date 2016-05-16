@@ -49,6 +49,7 @@ brew cask install google-drive
 brew cask install google-photos-backup
 brew cask install azure-cli
 #brew cask install gopro-studio
+brew cask install pdftotext # For that sweet pdf wordcounting
 
 # Fonts
 brew tap caskroom/fonts

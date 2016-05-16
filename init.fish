@@ -18,6 +18,10 @@ function code
     command open -n -b "com.microsoft.VSCode" $argv
 end
 
+function pdfwords
+    fish -c "pdftotext $argv - | wc -w"
+end
+
 alias l="ls -la"
 alias drma="docker rm -f (docker ps -a -q)"
 
