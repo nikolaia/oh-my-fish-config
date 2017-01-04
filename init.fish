@@ -1,10 +1,11 @@
-set PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/ $PATH
+set PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin $PATH
 set PATH $HOME/.rvm/bin $PATH
 set PATH /Applications/Postgres.app/Contents/Versions/9.3/bin $PATH
 set PATH /Users/nikolaia/.cargo/bin $PATH
+set PATH /Users/nikolaia/.elm/bin $PATH
 set -gx GOPATH $HOME/Development/Go
 set -gx RUST_SRC_PATH $HOME/Development/rust/src/
-set -gx JAVA_HOME `/usr/libexec/java_home -v 1.7`
+set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/
 set -gx ANDROID_HOME /usr/local/opt/android-sdk
 # set -g HOMEBREW_GITHUB_API_TOKEN REPLACE_ME_WITH_TOKEN
 
@@ -13,15 +14,12 @@ function maude
     fish -c "~/.maude/maude.darwin64 $argv"
 end
 
-function code
-    set -gx VSCODE_CWD (pwd)
-    command open -n -b "com.microsoft.VSCode" $argv
-end
-
 function pdfwords
     fish -c "pdftotext $argv - | wc -w"
 end
 
+alias git="hub"
+alias clip="pbcopy"
 alias l="ls -la"
 alias drma="docker rm -f (docker ps -a -q)"
 
