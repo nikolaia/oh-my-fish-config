@@ -59,3 +59,5 @@ brew cleanup
 
 # NPM Global installs
 npm install -g code-push-cli grunt-cli react-native-cli yo generator-aspnet
+
+# After installing xcode do xcode-select --install for the command line tools
