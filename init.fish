@@ -3,6 +3,8 @@ set PATH $HOME/.rvm/bin $PATH
 set PATH /Applications/Postgres.app/Contents/Versions/9.3/bin $PATH
 set PATH /Users/nikolaia/.cargo/bin $PATH
 set PATH /Users/nikolaia/.elm/bin $PATH
+set -gx DEP_OPENSSL_INCLUDE /usr/local/opt/openssl/
+set -gx OPENSSL_INCLUDE_DIR /usr/local/opt/openssl/include
 set -gx GOPATH $HOME/Development/Go
 set -gx RUST_SRC_PATH $HOME/Development/rust/src/
 set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/
