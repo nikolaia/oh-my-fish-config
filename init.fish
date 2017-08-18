@@ -4,6 +4,7 @@ set PATH /Applications/Postgres.app/Contents/Versions/9.3/bin $PATH
 set PATH /Users/nikolaia/.cargo/bin $PATH
 set PATH /Users/nikolaia/.elm/bin $PATH
 set PATH /Users/nikolaia/.kube-aws/bin $PATH
+set PATH /Users/nikolaia/bin $PATH
 set -gx DEP_OPENSSL_INCLUDE /usr/local/opt/openssl/
 set -gx OPENSSL_INCLUDE_DIR /usr/local/opt/openssl/include
 set -gx GOPATH $HOME/Development/Go
@@ -12,6 +13,8 @@ set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Ho
 set -gx ANDROID_HOME /usr/local/opt/android-sdk
 set -gx DOTNET_CLI_TELEMETRY_OPTOUT 1
 # set -g HOMEBREW_GITHUB_API_TOKEN REPLACE_ME_WITH_TOKEN
+
+
 
 # Function for running Maude with arguments
 function maude
