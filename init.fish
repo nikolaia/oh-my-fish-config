@@ -12,6 +12,7 @@ set -gx RUST_SRC_PATH $HOME/Development/rust/src/
 set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/
 set -gx ANDROID_HOME /usr/local/opt/android-sdk
 set -gx DOTNET_CLI_TELEMETRY_OPTOUT 1
+set -gx ASPNETCORE_ENVIRONMENT Development
 # set -g HOMEBREW_GITHUB_API_TOKEN REPLACE_ME_WITH_TOKEN
 
 
