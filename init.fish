@@ -1,74 +1,12 @@
-set PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin $PATH
-set PATH $HOME/.rvm/bin $PATH
-set PATH /Applications/Postgres.app/Contents/Versions/9.3/bin $PATH
-set PATH /Users/nikolaia/.cargo/bin $PATH
-set PATH /Users/nikolaia/.elm/bin $PATH
-set PATH /Users/nikolaia/.kube-aws/bin $PATH
-set PATH /Users/nikolaia/bin $PATH
-set -gx DEP_OPENSSL_INCLUDE /usr/local/opt/openssl/
-set -gx OPENSSL_INCLUDE_DIR /usr/local/opt/openssl/include
-set -gx GOPATH $HOME/Development/Go
-set -gx RUST_SRC_PATH $HOME/Development/rust/src/
-set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/
-set -gx ANDROID_HOME /usr/local/opt/android-sdk
-set -gx DOTNET_CLI_TELEMETRY_OPTOUT 1
-set -gx ASPNETCORE_ENVIRONMENT Development
-# set -g HOMEBREW_GITHUB_API_TOKEN REPLACE_ME_WITH_TOKEN
-
-
-
-# Function for running Maude with arguments
-function maude
-    fish -c "~/.maude/maude.darwin64 $argv"
-end
-
-function pdfwords
-    fish -c "pdftotext $argv - | wc -w"
-end
-
 alias git="hub"
 alias clip="pbcopy"
-alias l="ls -la"
-alias drma="docker rm -f (docker ps -a -q)"
+alias ll="ls -la"
 
 # Aliases for docker
 alias d="docker"
 alias dcomp="docker-compose"
 alias dmac="docker-machine"
-
-# Pass arguments to paket.exe in .paket folder
-function paket
-  fish -c "mono (pwd)/.paket/paket.exe $argv"
-end
-
-# Call build.sh in current dir
-function fake
-  fish -c "bash -c 'sh build.sh $argv'"
-end
-
-# New fsharp project
-function projectscaffold
-  fish -c "git clone git@github.com:fsprojects/ProjectScaffold.git $argv"
-  fish -c "bash -c 'sh $argv/build.sh'"
-end
-
-###-begin-yo-completion-###
-# Requires npm install -g yo
-function _yo_completion
-  set cmd (commandline -opc)
-  set cursor (commandline -C)
-  set completions (eval env DEBUG=\"" \"" COMP_CWORD=\""$cmd\"" COMP_LINE=\""$cmd\"" COMP_POINT=\""$cursor\"" yo-complete completion --json)
-
-  for completion in $completions
-    set cmd "node -e \"var parts = '$completion'.split(':'); console.log(parts.slice(0, -1).join(':')); console.log(parts.slice(-1)[0]);\""
-    set parts (eval $cmd)
-    complete -f -c yo -a "'$parts[1]'" -d "$parts[2]"
-    echo $parts[1]
-  end
-end
-
-complete -d 'yo' -c yo -a "(eval _yo_completion)"
-###-end-yo-completion-###
+alias drma="docker rm -f (docker ps -a -q)"
 
 ### LOCALHOST PLUGIN
 

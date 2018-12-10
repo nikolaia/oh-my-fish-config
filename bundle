@@ -4,3 +4,5 @@ package nvm
 package z
 theme bobthefish
 theme default
+theme nai
+theme sushi

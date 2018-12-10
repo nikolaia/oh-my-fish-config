@@ -1,6 +1,9 @@
 [core]
     user = nikolaia
-    email = nikolaia@users.noreply.github.com
+    email = nikolai@stasj.com
+[user]
+    name = nikolaia
+    email = nikolai@stasj.com
 [alias]
     co = checkout
     ec = config --global -e
@@ -14,6 +17,3 @@
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
     bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | gxargs -r git branch -d; }; f"
     bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
-[user]
-    email = nikolaia@users.noreply.github.com
-    name = nikolaia
