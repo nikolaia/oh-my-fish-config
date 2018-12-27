@@ -9,3 +9,4 @@ brew install fish
 brew install node
 brew install z
 brew install fortune
+brew install hub # github wrapper for git
