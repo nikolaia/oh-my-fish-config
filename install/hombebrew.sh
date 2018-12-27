@@ -8,3 +8,4 @@ brew install findutils # has the gxargs tool for my git bdone alias
 brew install fish
 brew install node
 brew install z
+brew install fortune
