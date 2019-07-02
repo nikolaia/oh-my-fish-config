@@ -9,3 +9,11 @@ Fork to ~/.config/omf
 ```fish
 fish_update_completions
 ```
+
+## VS Code
+
+Synced using https://github.com/shanalikhan/code-settings-sync
+
+## Font
+
+https://github.com/tonsky/FiraCode
