@@ -9,6 +9,8 @@ alias dcomp="docker-compose"
 alias dmac="docker-machine"
 alias drma="docker rm -f (docker ps -a -q)"
 
+alias tf="terraform"
+
 ### LOCALHOST PLUGIN
 
 # Opens http://localhost:3000 (and other ports) in the default browser
